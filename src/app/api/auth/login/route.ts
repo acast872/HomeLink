@@ -4,6 +4,7 @@ import { signToken } from '@/lib/auth'
 import bcrypt from 'bcryptjs'
 
 export async function POST(req: NextRequest) {
+  console.log("LOGIN API HIT")
   const { email, password, role } = await req.json()
   if (!email || !password || !role) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
